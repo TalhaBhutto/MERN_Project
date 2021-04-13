@@ -16,4 +16,10 @@ const CONNECTION_URL = 'mongodb+srv://Talha:lYDxLcpsmAs2gC0Y@cluster0.gmnqm.mong
 const PORT=process.env.PORT||5000;
 
 //connecting with mongoDB =>> useNewUrlParser:true,useUnifiedTopology:true are not required but we set them true to avoid errors in console
-mongoose.connect(CONNECTION_URL,{useNewUrlParser:true,useUnifiedTopology:true});
+//=>> .then run the app =>> .catch print the error
+mongoose.connect(CONNECTION_URL,{useNewUrlParser:true,useUnifiedTopology:true})
+.then(()=> app.listen(PORT,()=>console.log(`Server running on ${PORT}`)))
+.catch((error)=>console.log(error.message))
+
+// just there to avoid warnings in console
+mongoose.set('useFindAndModify',false)
