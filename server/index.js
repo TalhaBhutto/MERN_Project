@@ -4,8 +4,12 @@ import bodyparser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
-//set up express and added body paret to limit the image size
+import postRoutes from './routes/posts.js'; 
+
 const app=express()
+//Using express middleware to connect my app to the post routes
+app.use('/posts',postRoutes);
+//set up express and added body paret to limit the image size
 app.use(bodyparser.json({limit:"30mb",extended:true}));
 app.use(bodyparser.urlencoded({limit:"30mb",extended:true}));
 app.use(cors());
