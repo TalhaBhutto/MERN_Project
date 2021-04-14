@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import {Provider} from 'react-redux';
-import {createStore,applyMiddleware,componse, combineReducers} from 'redux';
+import {createStore,applyMiddleware,compose, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
+import reducers from './reducers'
 
-const store=createStore(combineReducers,compose(applyMiddleware(thunk)));
+const store=createStore(reducers,compose(applyMiddleware(thunk)));
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<Provider><App/></Provider>, document.getElementById('root'));
