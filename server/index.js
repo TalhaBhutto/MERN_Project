@@ -8,12 +8,12 @@ import postRoutes from './routes/posts.js';
 
 const app=express()
 //Using express middleware to connect my app to the post routes
-app.use('/posts',postRoutes);
+
 //set up express and added body paret to limit the image size
 app.use(bodyparser.json({limit:"30mb",extended:true}));
 app.use(bodyparser.urlencoded({limit:"30mb",extended:true}));
 app.use(cors());
-
+app.use('/posts',postRoutes);
 //mongoDB connection link
 const CONNECTION_URL = 'mongodb+srv://Talha:lYDxLcpsmAs2gC0Y@cluster0.gmnqm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 // port address =>> for local host:5000 =>> for heroku process.env.PORT
