@@ -17,8 +17,11 @@ function Post({post}) {
             </div>
             <div className={classes.overlay2}>
                 <Button style={{color:'white'}} size="small" onClick={()=>{}}>
-                    
+                    <MoreHorizIcon fontSize="default"/>
                 </Button>
+            </div>
+            <div className={classes.details}>
+                <Typography varient="h6">{post.creator}</Typography>
             </div>
         </Card>
     )
