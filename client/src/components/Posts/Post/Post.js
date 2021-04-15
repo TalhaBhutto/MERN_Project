@@ -13,7 +13,7 @@ function Post({post}) {
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
             <div className={classes.overlay}>
                 <Typography varient="h6">{post.creator}</Typography>
-                <Typography varient="h6">{post.creator}</Typography>
+                <Typography varient="h6">{moment(post.createdAt)}</Typography>
             </div>
         </Card>
     )
