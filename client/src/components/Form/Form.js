@@ -1,6 +1,6 @@
 import React from 'react'
 import useStyles from './styles';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {TextField,Button,Typography,Paper} from '@material-ui/core';
 import FileBase from 'react-file-base64';
 import {useDispatch} from 'react-redux';
@@ -13,7 +13,7 @@ function Form() {
     const classes=useStyles();
     const dispatch = useDispatch();
     
-    const handleSubmit =(e)=>{
+    const handleSubmit =async (e)=>{
         e.preventDefault();
         dispatch(createPost(postData));
     }
