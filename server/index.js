@@ -15,7 +15,7 @@ app.use(bodyparser.urlencoded({limit:"30mb",extended:true}));
 app.use(cors());
 app.use('/posts',postRoutes);
 //mongoDB connection link
-const CONNECTION_URL = 'mongodb+srv://Talha:lYDxLcpsmAs2gC0Y@cluster0.gmnqm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const CONNECTION_URL = 'mongodb+srv://Talha:lYDxLcpsmAs2gC0Y@cluster0.gmnqm.mongodb.net/memories?retryWrites=true&w=majority';
 // port address =>> for local host:5000 =>> for heroku process.env.PORT
 const PORT=process.env.PORT||5000;
 
