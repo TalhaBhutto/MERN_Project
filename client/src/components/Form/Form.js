@@ -2,7 +2,7 @@ import React from 'react'
 import useStyles from './styles';
 import {useState, useEffect} from 'react';
 import {TextField,Button,Typography,Paper} from '@material-ui/core';
-import FileBase from 'react-file-base64';
+//import FileBase from 'react-file-base64';
 import {useDispatch} from 'react-redux';
 import { createPost } from '../../actions/posts';
 
@@ -20,6 +20,22 @@ function Form() {
     const clear=()=>{
 
     }
+    const uploadImage=(e)=>{
+        const file=e.target.files[0];
+        convertBase64(file);
+    }
+    const convertBase64=(file)=>{
+        return new Promise((resolve,reject)=>{
+            const fileReader=new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload(()=>{
+                resolve(fileReader.result);
+            })
+            fileReader.onerror((error)=>{
+                reject(error);
+            })
+        })
+    }
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
@@ -30,7 +46,7 @@ function Form() {
                 <TextField name="tags" variant="outlined" label="tags" fullWidth value={postData.tags} onChange={(e)=>setPostData({...postData,tags:e.target.value})}/>
                 <div className={classes.fileInput}>
                     {/* <FileBase type="file" multiple={false} onDone={(base64)=>setPostData({...postData,selectedFile:base64})}/> */}
-                    <input type="file" multiple={false} onDone={(base64)=>setPostData({...postData,selectedFile:base64})}/>
+                    <input type="file" multiple={false} onChange={(e)=>{uploadImage(e)}}/>
                 </div>
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
                 <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
