@@ -1,3 +1,4 @@
+import { Mongoose } from 'mongoose';
 import PostMessage from '../models/postMessage.js';
 import postMessage from '../models/postMessage.js'
 
@@ -26,8 +27,8 @@ export const createPost=async (req,res)=>{
     }
 }
 export const updatePost=async (req,res)=>{
-    const post =req.body;
-    const newPost=new PostMessage(post);
+    const {id:_id}=req.params;
+    if(!Mongoose.prototype.ObjectId.isValid(_id))
     try{
         await newPost.save();
         res.status(201).json(newPost);
