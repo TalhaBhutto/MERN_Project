@@ -6,7 +6,7 @@ import {TextField,Button,Typography,Paper} from '@material-ui/core';
 import {useDispatch,useSelector} from 'react-redux';
 import { createPost,updatePost } from '../../actions/posts';
 
-function Form(currentId,setCurrentId) {
+function Form({currentId,setCurrentId}) {
     const [postData, setPostData] = useState({
         creator:'',title:'',message:'',tags:'',selectedFile:''
     });
