@@ -6,7 +6,7 @@ import {TextField,Button,Typography,Paper} from '@material-ui/core';
 import {useDispatch} from 'react-redux';
 import { createPost } from '../../actions/posts';
 
-function Form() {
+function Form(currentId,setCurrentId) {
     const [postData, setPostData] = useState({
         creator:'',title:'',message:'',tags:'',selectedFile:''
     });
@@ -15,7 +15,12 @@ function Form() {
     
     const handleSubmit =async (e)=>{
         e.preventDefault();
-        dispatch(createPost(postData));
+        if(currentId){
+            dispatch(updatePost(currentId,postData));    
+        }
+        else{
+            dispatch(createPost(postData));
+        }
     }
     const clear=()=>{
 
