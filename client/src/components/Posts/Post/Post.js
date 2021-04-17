@@ -8,6 +8,10 @@ import moment from 'moment';
 
 const Post=({post,setCurrentId})=> {
     const classes=useStyles();
+    const displayTags=(p=post.tags)=>{
+        const t=p[0].split(" ");
+        return t.map((tag)=>`#${tag} `)
+    }
     return (
         <Card className={classes.card}>
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
@@ -21,7 +25,7 @@ const Post=({post,setCurrentId})=> {
                 </Button>
             </div>
             <div className={classes.details}>
-                <Typography variant="body2" color="textSecondary">{post.tags.map((tag)=>`#${tag} `)}</Typography>
+                <Typography variant="body2" color="textSecondary">{displayTags()}</Typography>
             </div>
             <CardContent>
             <Typography className={classes.title} variant="h5" gutterBottom>{post.message}</Typography>
