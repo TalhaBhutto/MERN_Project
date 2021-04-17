@@ -8,7 +8,7 @@ import { createPost } from '../../actions/posts';
 
 function Form() {
     const [postData, setPostData] = useState({
-        creator:'',title:'',message1:'',tags:'',selectedFile:''
+        creator:'',title:'',message:'',tags:'',selectedFile:''
     });
     const classes=useStyles();
     const dispatch = useDispatch();
