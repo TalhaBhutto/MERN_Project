@@ -25,7 +25,7 @@ export const createPost=async (req,res)=>{
 
     }
 }
-export const createPost=async (req,res)=>{
+export const updatePost=async (req,res)=>{
     const post =req.body;
     const newPost=new PostMessage(post);
     try{
