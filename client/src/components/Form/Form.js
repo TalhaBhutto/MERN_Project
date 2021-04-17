@@ -20,7 +20,7 @@ function Form({currentId,setCurrentId}) {
     const handleSubmit =async (e)=>{
         e.preventDefault();
         if(currentId){
-            dispatch(updatePost(currentId,postData));    
+            dispatch(updatePost(currentId,postData));
         }
         else{
             dispatch(createPost(postData));
