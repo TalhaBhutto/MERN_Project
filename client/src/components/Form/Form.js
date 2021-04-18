@@ -25,8 +25,13 @@ function Form({currentId,setCurrentId}) {
         else{
             dispatch(createPost(postData));
         }
+        clear();
     }
     const clear=()=>{
+        setCurrentId(null);
+        setPostData({
+            creator:'',title:'',message:'',tags:'',selectedFile:''
+        });
 
     }
     const uploadImage=async (e)=>{
@@ -49,7 +54,7 @@ function Form({currentId,setCurrentId}) {
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                <Typography varient="h6">Creat a Memory</Typography>
+                <Typography varient="h6">{currentId?`Edit`:'Creat'} a Memory</Typography>
                 <TextField name="creator" variant="outlined" label="creator" fullWidth value={postData.creator} onChange={(e)=>setPostData({...postData,creator:e.target.value})}/>
                 <TextField name="title" variant="outlined" label="title" fullWidth value={postData.title} onChange={(e)=>setPostData({...postData,title:e.target.value})}/>
                 <TextField name="message" variant="outlined" label="message" fullWidth value={postData.message} onChange={(e)=>setPostData({...postData,message:e.target.value})}/>
