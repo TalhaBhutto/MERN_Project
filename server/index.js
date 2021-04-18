@@ -3,10 +3,12 @@ import express from 'express';
 import bodyparser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
 import postRoutes from './routes/posts.js'; 
 
-const app=express()
+const app=express();
+dotenv.config();
 //Using express middleware to connect my app to the post routes
 
 //set up express and added body paret to limit the image size
