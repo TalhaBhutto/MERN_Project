@@ -1,5 +1,7 @@
-import React from 'react'
-
+import React from 'react';
+import {Container,Grow,Grid} from '@material-ui/core';
+import Posts from '../Posts/Posts';
+import Form from '../Form/Form';
 function Home() {
     return (
         <Grow in>
