@@ -1,7 +1,7 @@
 import React from 'react'
 
 function styles() {
-    const state=NULL;
+    const state=null;
     return (
         <div>
             AUTH
