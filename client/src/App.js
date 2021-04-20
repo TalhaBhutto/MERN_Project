@@ -17,7 +17,7 @@ const App = () =>{
         }, [currentId,dispatch])
     return (
         <Container maxWidth="lg">
-            <NavBar></NavBar>
+            <NavBar/>
             <Grow in>
                 <Container>
                     <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch" spacing={3}>
