@@ -8,6 +8,7 @@ import { Avatar } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 
 const Navbar = () => {
+    const user="";
     const classes=useStyles();
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
@@ -29,7 +30,7 @@ const Navbar = () => {
                             </Button>
                     </div>
                 ):(
-                    <Button component={Link} to="/auth" varient="contained" color="primary">Sign in</Button>
+                    <Button component={Link} to="/auth" variant="contained" color="primary">Sign in</Button>
                 )}
             </Toolbar>
             </AppBar>
