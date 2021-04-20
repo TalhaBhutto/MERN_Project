@@ -1,8 +1,15 @@
-import React from 'react';
+import React,{useState} from 'react';
+import {useDispatch} from 'react-redux';
 import {Container,Grow,Grid} from '@material-ui/core';
 import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
 function Home() {
+    const [currentId, setCurrentId] = useState("")
+    const classes=useStyles();
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getPosts());
+        }, [currentId,dispatch])
     return (
         <Grow in>
                 <Container>
