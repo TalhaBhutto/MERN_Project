@@ -10,12 +10,7 @@ import NavBar from './components/Navbar/Navbar';
 import {BrowserRouter,Switch,ROute} from 'react-router-dom';
 
 const App = () =>{
-    const [currentId, setCurrentId] = useState("")
-    const classes=useStyles();
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(getPosts());
-        }, [currentId,dispatch])
+    
     return (
         <Container maxWidth="lg">
             <NavBar/>
