@@ -7,10 +7,16 @@ import Home from './components/Home/Home';
 const App = () =>{
     
     return (
+        <BrowserRouter>
         <Container maxWidth="lg">
             <NavBar/>
+            <Switch>
+                <Route path="/" exact component={Home}/>
+                <Route path="/auth" exact component={Auth}/>
+            </Switch>
             <Home/>
         </Container>
+        </BrowserRouter>
     );
 }
 
