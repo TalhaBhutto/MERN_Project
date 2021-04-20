@@ -7,6 +7,7 @@ import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import useStyles from './styles';
 import NavBar from './components/Navbar/Navbar';
+import {BrowserRouter,Switch,ROute} from 'react-router-dom';
 
 const App = () =>{
     const [currentId, setCurrentId] = useState("")
@@ -18,18 +19,7 @@ const App = () =>{
     return (
         <Container maxWidth="lg">
             <NavBar/>
-            <Grow in>
-                <Container>
-                    <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch" spacing={3}>
-                        <Grid item xs={12} sm={12} md={8}>
-                            <Posts setCurrentId={setCurrentId}/>
-                        </Grid>
-                        <Grid item xs={12} sm={12} md={4}>
-                            <Form currentId={currentId} setCurrentId={setCurrentId}/>
-                        </Grid>
-                    </Grid>
-                </Container>
-            </Grow>
+            
         </Container>
     );
 }
