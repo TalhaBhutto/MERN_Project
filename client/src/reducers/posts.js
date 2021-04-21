@@ -1,4 +1,3 @@
-
 import {CREATE,UPDATE,DELETE,FETCH_ALL} from '../constants/actionTypes';
 export default (posts=[],action)=>{
     switch(action.type){
