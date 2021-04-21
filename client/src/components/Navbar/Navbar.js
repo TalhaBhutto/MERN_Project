@@ -8,7 +8,7 @@ import { Avatar } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 
 const Navbar = () => {
-    const
+    const [user,]
     const classes=useStyles();
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
