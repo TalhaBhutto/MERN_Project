@@ -24,8 +24,8 @@ function Auth() {
     const googleSuccess= async (res)=>{
         console.log(res);
     }
-    const googleFailure=()=>{
-        console.log("Google sign in was unsuccessful.Try again later.");
+    const googleFailure=(error)=>{
+        console.log("Google sign in was unsuccessful.Try again later.\n"+error);
     }
     return (
         <Container component="main" maxWidth="xs">
