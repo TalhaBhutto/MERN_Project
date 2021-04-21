@@ -28,6 +28,7 @@ function Auth() {
         const token=res?.tokenId;
         try{
             dispatch({type:'AUTH',data:{result,token}});
+            history.pushState('/')
         }
         catch(error){
             console.log(error)
