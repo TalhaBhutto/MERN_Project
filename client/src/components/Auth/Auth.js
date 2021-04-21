@@ -25,7 +25,7 @@ function Auth() {
         
     }
     const googleFailure=()=>{
-
+        console.log("Google sign in was unsuccessful");
     }
     return (
         <Container component="main" maxWidth="xs">
