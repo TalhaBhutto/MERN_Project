@@ -56,7 +56,7 @@ function Auth() {
                 <GoogleLogin
                     clientId="583812616617-47t2nfv1fgl43ql780giftvhchc0nchn.apps.googleusercontent.com"
                     render={(renderProps)=>(
-                        <Button className={classes.googleButton} color='primary' fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon/>} variant='contained' >Google SignIn</Button>
+                        <Button className={classes.googleButton} color='primary' fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon/>} variant='contained' >Google Sign In</Button>
                     )}
                     onSuccess={googleSuccess}
                     onFailure={googleFailure}
