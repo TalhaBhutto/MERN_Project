@@ -9,7 +9,8 @@ import { Button } from '@material-ui/core';
 
 const Navbar = () => {
     const [user,setUser]=useState();
-    const classes=useStyles();
+    const classes=useStyles(JSON.parse(localStorage.getItem('profile')));
+    console.log(user);
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
             <div className={classes.brandContainer}>
