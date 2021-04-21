@@ -8,8 +8,12 @@ import { Avatar } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 
 const Navbar = () => {
-    const [user,setUser]=useState();
-    const classes=useStyles(JSON.parse(localStorage.getItem('profile')));
+    const [user,setUser]=useState(JSON.parse(localStorage.getItem('profile')));
+    const classes=useStyles();
+    useEffect(()=>{
+        const token=user?.token;
+        setUser(JSON.parse(localStorage.getItem('profile')))
+    },[])
     console.log(user);
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
