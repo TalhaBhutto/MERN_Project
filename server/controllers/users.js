@@ -9,7 +9,7 @@ export const signin=async (req,res)=>{
 
     }
     catch(e){
-        
+        console.log(e);
     }
 }
 export const signup=async (req,res)=>{
