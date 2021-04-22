@@ -28,6 +28,9 @@ function Auth() {
         if(isSignup){
 
         }
+        else{
+            
+        }
     }
     const handleChange=(e)=>{
         setFormData({...formData,[e.target.name]:e.target.value});      
