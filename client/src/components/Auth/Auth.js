@@ -25,7 +25,9 @@ function Auth() {
     const history=useHistory();
     const handleSubmit=(e)=>{
         e.preventDefault();
-        if()
+        if(isSignup){
+
+        }
     }
     const handleChange=(e)=>{
         setFormData({...formData,[e.target.name]:e.target.value});      
