@@ -26,10 +26,10 @@ function Auth() {
     const handleSubmit=(e)=>{
         e.preventDefault();
         if(isSignup){
-
+            dispatch(signup(formData,history));
         }
         else{
-            
+
         }
     }
     const handleChange=(e)=>{
