@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import {Link,useHistory} from 'react-router-dom';
+import {Link,useHistory,useLocation} from 'react-router-dom';
 import {AppBar,Typography} from '@material-ui/core';
 import memories from '../../images/memories.png';
 import useStyles from './styles';
