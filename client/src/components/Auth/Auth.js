@@ -7,6 +7,7 @@ import Input from './Input';
 import Icon from './icon';
 import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import {signin,signup} from '../../actions/auth'
 
 function Auth() {
     const initialState={
@@ -29,7 +30,7 @@ function Auth() {
             dispatch(signup(formData,history));
         }
         else{
-
+            dispatch(signin(formData,history));
         }
     }
     const handleChange=(e)=>{
