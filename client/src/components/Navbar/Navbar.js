@@ -11,11 +11,12 @@ import {useDispatch} from 'react-redux';
 const Navbar = () => {
     const [user,setUser]=useState(JSON.parse(localStorage.getItem('profile')));
     const classes=useStyles();
+    const location=useLocation();
     const history=useHistory();
     useEffect(()=>{
         const token=user?.token;
         setUser(JSON.parse(localStorage.getItem('profile')))
-    },[])
+    },[location])
     const dispatch=useDispatch();
     const logout=()=>{
         dispatch({type:'LOGOUT'});

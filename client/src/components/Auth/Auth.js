@@ -9,17 +9,26 @@ import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
 function Auth() {
+    const initialState={
+        firstName:"",
+        lastName:"",
+        email:"",
+        password:"",
+        confirmPassword:""
+    }
     const classes=useStyles();
     const [showPassword, setShowPassword] = useState(false);
     const handleShowPassword=()=>setShowPassword((prevShowPassword)=>!prevShowPassword)
     const [isSignup, setisSignup] = useState(false)
+    const [formData,setFormData]=useState(initialState);
     const dispatch=useDispatch();
     const history=useHistory();
-    const handleSubmit=()=>{
-
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        if()
     }
-    const handleChange=()=>{
-
+    const handleChange=(e)=>{
+        setFormData({...formData,[e.target.name]:e.target.value});      
     }
     const switchMode=()=>{
         setisSignup((e)=>!e);
