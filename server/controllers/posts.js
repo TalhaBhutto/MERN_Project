@@ -44,6 +44,9 @@ export const likePost=async (req,res)=>{
     if(index===-1){
         post.likes.push(req.userId);
     }
+    else{
+        post.likesa
+    }
     const updatedPost=await postMessage.findByIdAndUpdate(id,{likeCount:post.likeCount +1},{new:true});
     res.json(updatedPost);
 }
