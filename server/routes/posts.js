@@ -1,7 +1,7 @@
 // All the routes related to POST will be here
 import express from 'express';
 import {getPosts,createPost,updatePost,deletePost,likePost} from '../controllers/posts.js'
-import auth from '../middleware/auth';
+import auth from '../middleware/auth.js';
 
 
 const router=express.Router();
