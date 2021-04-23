@@ -38,7 +38,7 @@ function Auth() {
     }
     const switchMode=()=>{
         setisSignup((e)=>!e);
-        handleShowPassword(false);
+        setShowPassword(false);
     }
     const googleSuccess= async (res)=>{
         const result=res?.profileObj;
