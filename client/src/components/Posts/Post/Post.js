@@ -12,18 +12,19 @@ import { ThumbUpAltOutlined } from '@material-ui/icons';
 const Post=({post,setCurrentId})=> {
     const dispatch = useDispatch();
     const classes=useStyles();
-    const likes=()=>{
-        if(post.likes.length>0){
-            return post.likes.find((like)=>like===(user?.result?.googleID||user?.result?._id))?
+    const user=JSON.parse(localStorage.getItem('profile'));
+    const Likes=()=>{
+        if(post.like.length>0){
+            return post.like.find((like)=>like===(user?.result?.googleID||user?.result?._id))?
             (
                 <>
-                <ThumbUpAltIcon fontSize="small"/>&nbsp;{post.likes.length>2?`You and ${post.likes.length -1} others`:`${post.likes.length} like${post.likes.length>1?"s":''}`}</>
+                <ThumbUpAltIcon fontSize="small"/>&nbsp;{post.like.length>2?`You and ${post.like.length -1} others`:`${post.like.length} like${post.like.length>1?"s":''}`}</>
             ):
             (
-                <><ThumbUpAltOutlined fontsize="small"/> &nbsp;{post.likes.length}{post.likes.length===1?'Like':'Likes'}</>
+                <><ThumbUpAltOutlined fontSize="small"/> &nbsp;{post.like.length}{post.like.length===1?'Like':'Likes'}</>
             );
         }
-        return <><ThumbUpAltOutlined fontsize="small"/> &nbsp;Like</>
+        return <><ThumbUpAltOutlined fontSize="small"/> &nbsp;Like</>
     }
     const displayTags=(p=post.tags)=>{
         const t=p[0].split(" ");
@@ -49,10 +50,8 @@ const Post=({post,setCurrentId})=> {
             <Typography variant="body2" color="textSecondary">{post.message}</Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary" onClick={()=>dispatch(likePost(post._id))}>
-                    <ThumbUpAltIcon fontSize="small"/>
-                    &nbsp; Like &nbsp;
-                    {post.likeCount}
+                <Button size="small" disabled={!user?.result} color="primary" onClick={()=>dispatch(likePost(post._id))}>
+                    <Likes/>
                 </Button>
                 <Button size="small" color="primary" onClick={()=>dispatch(deletePost(post._id))}>
                     <DeleteIcon fontSize="small"/>
