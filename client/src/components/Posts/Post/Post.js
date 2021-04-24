@@ -7,10 +7,24 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 import {useDispatch} from 'react-redux';
 import {deletePost,likePost} from '../../../actions/posts'
+import { ThumbUpAltOutlined } from '@material-ui/icons';
 
 const Post=({post,setCurrentId})=> {
     const dispatch = useDispatch();
     const classes=useStyles();
+    const likes=()=>{
+        if(post.likes.length>0){
+            return post.likes.find((like)=>like===(user?.result?.googleID||user?.result?._id))?
+            (
+                <>
+                <ThumbUpAltIcon fontSize="small"/>&nbsp;{post.likes.length>2?`You and ${post.likes.length -1} others`:`${post.likes.length} like${post.likes.length>1?"s":''}`}</>
+            ):
+            (
+                <><ThumbUpAltOutlined fontsize="small"/> &nbsp;{post.likes.length}{post.likes.length===1?'Like':'Likes'}</>
+            );
+        }
+        return <><ThumbUpAltOutlined fontsize="small"/> &nbsp;Like</>
+    }
     const displayTags=(p=post.tags)=>{
         const t=p[0].split(" ");
         return t.map((tag)=>tag[0]!=="#"?`#${tag} `:`${tag} `)
