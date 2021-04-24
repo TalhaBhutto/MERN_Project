@@ -13,13 +13,13 @@ const Post=({post,setCurrentId})=> {
     const classes=useStyles();
     const displayTags=(p=post.tags)=>{
         const t=p[0].split(" ");
-        return t.map((tag)=>`#${tag} `)
+        return t.map((tag)=>tag[0]!=="#"?`#${tag} `:`${tag} `)
     }
     return (
         <Card className={classes.card}>
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
             <div className={classes.overlay}>
-                <Typography variant="h6">{post.creator}</Typography>
+                <Typography variant="h6">{post.name}</Typography>
                 <Typography variant="h6">{moment(post.createdAt).fromNow()}</Typography>
             </div>
             <div className={classes.overlay2}>
