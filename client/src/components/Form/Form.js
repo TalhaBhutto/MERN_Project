@@ -10,6 +10,7 @@ function Form({currentId,setCurrentId}) {
     const [postData, setPostData] = useState({
         title:'',message:'',tags:'',selectedFile:''
     });
+    const user=JSON.parse(localStorage.getItem('profile'));
     const post = useSelector(state => currentId?state.posts.find((p)=>p._id===currentId):null)
     const classes=useStyles();
     const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function Form({currentId,setCurrentId}) {
             dispatch(updatePost(currentId,postData));
         }
         else{
-            dispatch(createPost({...postData}));
+            dispatch(createPost({...postData,name:user?.result?.name}));
         }
         clear();
     }
