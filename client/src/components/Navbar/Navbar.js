@@ -65,12 +65,10 @@ const Navbar = () => {
                       }
                     </AppBar>
                       {user?.result ? (
-                        <AppBar className={classes.appBar2} position="static" color="inherit">  
-                        <div className={classes.profile2}>
+                        <AppBar className={classes.appBar3} position="static" color="inherit">  
                           <Avatar className={classes.purple} alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
                           <Typography className={classes.userName} variant="h6">{user?.result.name}</Typography>
-                          </div>
-                        </AppBar>
+                          </AppBar>
                       ) : null}
                 </>
                 )
