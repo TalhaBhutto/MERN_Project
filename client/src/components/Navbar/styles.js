@@ -45,6 +45,7 @@ export default makeStyles((theme) => ({
   },
   profile2: {
     display: 'flex',
+    flexDirection:"row",
     justifyContent: 'space-between',
     },
   userName: {
