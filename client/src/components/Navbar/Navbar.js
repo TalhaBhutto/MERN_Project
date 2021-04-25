@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Typography, Toolbar, Avatar, Button, TextField } from '@material-ui/core';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import decode from 'jwt-decode';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 
