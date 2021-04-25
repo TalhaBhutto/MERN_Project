@@ -55,6 +55,11 @@ const Navbar = () => {
                       <div><TextField className={classes.SearchText}></TextField>
                       <Button><SearchOutlinedIcon/></Button>
                       </div>
+                      {
+                        !user?.result &&(
+                          <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
+                        )
+                      }
                     </AppBar>
                     <AppBar className={classes.appBar} position="static" color="inherit">  
                     <Toolbar className={classes.toolbar}>
@@ -77,12 +82,14 @@ const Navbar = () => {
                       <img className={classes.image} src={memories} alt="icon" height="60" />
                     </div>
                   </AppBar>
-
                   <AppBar className={classes.appBar} position="static" color="inherit">
                     <div>
                       <TextField></TextField>
                       <Button>Search</Button>
                     </div>
+                    {
+                      
+                    }
                     <Toolbar className={classes.toolbar}>
                       {user?.result ? (
                         <div className={classes.profile}>
@@ -90,9 +97,7 @@ const Navbar = () => {
                           <Typography className={classes.userName} variant="h6">{user?.result.name}</Typography>
                           <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
                         </div>
-                      ) : (
-                        <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
-                      )}
+                      ) :null}
                     </Toolbar>
                   </AppBar>
                 </>)
