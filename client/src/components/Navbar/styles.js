@@ -11,6 +11,14 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     padding: '10px 50px',
   },
+  appBar2: {
+    borderRadius: 15,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '10px 50px',
+  },
   SearchBar: {
     display: 'flex',
     flexDirection: 'row',
