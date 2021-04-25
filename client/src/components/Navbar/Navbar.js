@@ -13,6 +13,7 @@ import Media from 'react-media';
 const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
   const dispatch = useDispatch();
+  const posts = useSelector(state => state.posts)
   const location = useLocation();
   const history = useHistory();
   const classes = useStyles();
