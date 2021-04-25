@@ -52,7 +52,7 @@ const Navbar = () => {
                   </AppBar>
 
                   <AppBar className={classes.appBar} position="static" color="inherit">
-                      <div><TextField className={classes.SearchText}></TextField>
+                      <div style={{maxWidth:"140px"}}><TextField className={classes.SearchText}></TextField>
                       <Button><SearchOutlinedIcon/></Button>
                       </div>
                       {
@@ -61,17 +61,17 @@ const Navbar = () => {
                         )
                       }
                     </AppBar>
-                    <AppBar className={classes.appBar} position="static" color="inherit">  
-                    <Toolbar className={classes.toolbar}>
                       {user?.result ? (
+                        <AppBar className={classes.appBar} position="static" color="inherit">  
+                        <Toolbar className={classes.toolbar}>    
                         <div className={classes.profile}>
                           <Avatar className={classes.purple} alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
                           <Typography className={classes.userName} variant="h6">{user?.result.name}</Typography>
                           <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
                         </div>
+                        </Toolbar>
+                        </AppBar>
                       ) : null}
-                    </Toolbar>
-                  </AppBar>
                 </>
                 )
               : (
