@@ -88,9 +88,7 @@ const Navbar = () => {
                       </div>
                     
                     {
-                      !user?.result ? (
-                        <Button component={Link} to="/auth" color="primary">Sign In</Button>
-                      ):null
+                      
                     }
                     <Toolbar className={classes.toolbar}>
                       {user?.result ? (
@@ -99,7 +97,8 @@ const Navbar = () => {
                           <Typography className={classes.userName} variant="h6">{user?.result.name}</Typography>
                           <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
                         </div>
-                      ) :null}
+                      ) :<Button component={Link} variant="contained" to="/auth" color="primary">Sign In</Button>
+                    }
                     </Toolbar>
                   </AppBar>
                 </>)
