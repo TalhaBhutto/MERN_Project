@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Media query="(max-width:400px)">
+      <Media query="(min-width:400px)">
         {
           matches => {
             return matches ? (
