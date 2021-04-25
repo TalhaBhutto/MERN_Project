@@ -88,7 +88,9 @@ const Navbar = () => {
                       <Button>Search</Button>
                     </div>
                     {
-                      
+                      !user?.result ? (
+                        <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
+                      ):null
                     }
                     <Toolbar className={classes.toolbar}>
                       {user?.result ? (
