@@ -89,7 +89,7 @@ export const searchPost=async (req,res,next)=>{
     const { id } = req.params;
 
     try {
-        const post = await PostMessage.find({name:{$regix:id,$options:'$i'}});
+        const post = await PostMessage.find({title:{$regex:id,$options:'$i'}});
         res.status(200).json(post);
     } catch (error) {
         res.status(404).json({ message: error.message });
