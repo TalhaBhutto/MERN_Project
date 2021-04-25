@@ -81,10 +81,10 @@ const Navbar = () => {
                     </div>
                   </AppBar>
                   <AppBar className={classes.appBar} position="static" color="inherit">
-                    <div>
+    
                       <TextField></TextField>
-                      <Button>Search</Button>
-                    </div>
+                      <Button><SearchOutlinedIcon/></Button>
+                    
                     {
                       !user?.result ? (
                         <Button component={Link} to="/auth" color="primary">Sign In</Button>
