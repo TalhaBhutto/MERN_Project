@@ -11,12 +11,18 @@ import useStyles from './styles';
 import Media from 'react-media';
 
 const Navbar = () => {
+  const [search,setSearch]=useState("");
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
   const dispatch = useDispatch();
   const posts = useSelector(state => state.posts)
   const location = useLocation();
   const history = useHistory();
   const classes = useStyles();
+
+  const updateSearch=(event)=>{
+    const val=event.target.value;
+    setSearch(val);
+  }
 
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
@@ -84,7 +90,7 @@ const Navbar = () => {
                   <AppBar className={classes.appBar2} position="static" color="inherit">
     
                       <div className={classes.SearchBar}>
-                        <TextField></TextField>
+                        <TextField value={search} onChange={updateSearch}></TextField>
                       <Button><SearchOutlinedIcon/></Button>
                       </div>
                     
