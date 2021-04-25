@@ -80,10 +80,12 @@ const Navbar = () => {
                       <img className={classes.image} src={memories} alt="icon" height="60" />
                     </div>
                   </AppBar>
-                  <AppBar className={classes.appBar} position="static" color="inherit">
+                  <AppBar className={classes.appBar2} position="static" color="inherit">
     
-                      <TextField></TextField>
+                      <div className={classes.SearchBar}>
+                        <TextField></TextField>
                       <Button><SearchOutlinedIcon/></Button>
+                      </div>
                     
                     {
                       !user?.result ? (
