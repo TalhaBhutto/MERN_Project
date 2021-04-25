@@ -52,11 +52,9 @@ const Navbar = () => {
                   </AppBar>
 
                   <AppBar className={classes.appBar} position="static" color="inherit">
-                    <div styles={classes.SearchBar}>
-                      <TextField className={classes.SearchText}></TextField>
+                      <TextField ></TextField>
                       <Button  variant="contained" color="inherit">Search</Button>
-                    </div>
-                  </AppBar>
+                    </AppBar>
                     <AppBar className={classes.appBar} position="static" color="inherit">  
                     <Toolbar className={classes.toolbar}>
                       {user?.result ? (
