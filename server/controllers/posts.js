@@ -85,6 +85,9 @@ export const likePost = async (req, res) => {
     const updatedPost = await PostMessage.findByIdAndUpdate(id, post, { new: true });
     res.status(200).json(updatedPost);
 }
+export const searchPost=async (req,res,next)=>{
+    
+}
 
 
 export default router;
