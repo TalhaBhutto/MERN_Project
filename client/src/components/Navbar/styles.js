@@ -47,6 +47,6 @@ export default makeStyles((theme) => ({
     backgroundColor: deepPurple[500],
   },
   SearchText:{
-    maxWidth:'200px'
+    maxWidth:'120px'
   }
 }));
