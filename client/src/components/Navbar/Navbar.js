@@ -8,6 +8,7 @@ import media from 'react-media';
 import memories from '../../images/memories.png';
 import * as actionType from '../../constants/actionTypes';
 import useStyles from './styles';
+import Media from 'react-media';
 
 const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
@@ -40,7 +41,13 @@ const Navbar = () => {
     <>
     <AppBar className={classes.appBar} position="static" color="inherit">
       <div className={classes.brandContainer}>
-        <Typography component={Link} to="/" className={classes.heading} variant="h2" align="center">Memories</Typography>
+        <Media query="(max-width:400px)">
+          {
+            matches=>{
+              return matches? <Typography component={Link} to="/" className={classes.heading} variant="h4" align="center">Memories</Typography>:<Typography component={Link} to="/" className={classes.heading} variant="h2" align="center">Memories</Typography>
+            }
+          }
+        </Media>
         <img className={classes.image} src={memories} alt="icon" height="60" />
       </div>
       </AppBar>
