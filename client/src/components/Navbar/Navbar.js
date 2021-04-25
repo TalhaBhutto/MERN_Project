@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Media query="(max-width:400px)">
+      <Media query="(max-width:450px)">
         {
           matches => {
             return matches ? (
@@ -89,7 +89,7 @@ const Navbar = () => {
                     </div>
                     {
                       !user?.result ? (
-                        <Button component={Link} to="/auth" variant="p" color="primary">Sign In</Button>
+                        <Button component={Link} to="/auth" color="primary">Sign In</Button>
                       ):null
                     }
                     <Toolbar className={classes.toolbar}>
