@@ -43,7 +43,7 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-between',
     width: '400px',
   },
-  profile: {
+  profile2: {
     display: 'flex',
     justifyContent: 'space-between',
     },
