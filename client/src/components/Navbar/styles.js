@@ -43,6 +43,10 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-between',
     width: '400px',
   },
+  profile: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    },
   userName: {
     display: 'flex',
     alignItems: 'center',
