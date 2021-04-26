@@ -3,7 +3,7 @@ import { AppBar, Typography, Toolbar, Avatar, Button, TextField } from '@materia
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import decode from 'jwt-decode';
-import { searchPosts } from '../../actions/posts'
+import { searchPosts,getPosts } from '../../actions/posts'
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 
 import memories from '../../images/memories.png';
@@ -56,7 +56,7 @@ const Navbar = () => {
               <>
                 <AppBar className={classes.appBar2} position="static" color="inherit">
                   <div className={classes.brandContainer}>
-                    <Typography component={Link} to="/" className={classes.heading} variant="h3" align="center">Memories</Typography>
+                    <Typography component={Link} onClick={dispatch(getPosts())} to="/" className={classes.heading} variant="h3" align="center">Memories</Typography>
                     <img className={classes.image} src={memories} alt="icon" height="60" />
                   </div>
                 </AppBar>
