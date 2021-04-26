@@ -20,6 +20,7 @@ const Navbar = () => {
   const history = useHistory();
   const classes = useStyles();
   const searchPost=()=>{
+    localStorage.setItem("load",false);
     dispatch(searchPosts(search))
   }
   const updateSearch = (event) => {
