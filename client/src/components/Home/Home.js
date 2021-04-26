@@ -11,7 +11,7 @@ function Home() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getPosts());
-        }, [currentId,dispatch])
+        }, [dispatch])
     return (
         <Grow in>
                 <Container>
