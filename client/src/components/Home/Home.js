@@ -10,7 +10,8 @@ function Home() {
     const classes=useStyles();
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getPosts());
+        if(localStorage.getItem("load")){
+        dispatch(getPosts());}
         }, [dispatch])
     return (
         <Grow in>
