@@ -20,13 +20,13 @@ const Navbar = () => {
   const history = useHistory();
   const classes = useStyles();
   const searchPost=()=>{
-    localStorage.setItem("load","false");
-    dispatch(searchPosts(search))
+    dispatch(searchPosts(search));
+    setSearch("");
   }
   const updateSearch = (event) => {
     const val = event.target.value;
     setSearch(val);
-  }
+    }
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
 
@@ -63,7 +63,7 @@ const Navbar = () => {
 
                 <AppBar className={classes.appBar2} position="static" color="inherit">
                   <div><TextField className={classes.SearchText} value={search} onChange={updateSearch}></TextField>
-                      <Button component={Link} to="/" onClick={() => dispatch(searchPosts(search))}><SearchOutlinedIcon /></Button>
+                      <Button onClick={searchPost}><SearchOutlinedIcon /></Button>
                     
                   </div>
                   {
@@ -95,7 +95,7 @@ const Navbar = () => {
 
                     <div className={classes.SearchBar}>
                       <TextField value={search} onChange={updateSearch}></TextField>
-                      <Link to='/'><Button onClick={searchPost}><SearchOutlinedIcon /></Button></Link>
+                      <Button onClick={searchPost}><SearchOutlinedIcon /></Button>
                     </div>
 
                     {
