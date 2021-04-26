@@ -13,6 +13,7 @@ function Form({currentId,setCurrentId}) {
     const user=JSON.parse(localStorage.getItem('profile'));
     const post = useSelector(state => currentId?state.posts.find((p)=>p._id===currentId):null)
     const classes=useStyles();
+    const [image,setImage]=useState();
     const dispatch = useDispatch();
     useEffect(() => {
         if(post) setPostData(post);
@@ -33,7 +34,7 @@ function Form({currentId,setCurrentId}) {
         setPostData({
             title:'',message:'',tags:'',selectedFile:''
         });
-
+        setImage("");
     }
     const uploadImage=async (e)=>{
         const file=e.target.files[0];
@@ -70,7 +71,7 @@ function Form({currentId,setCurrentId}) {
                 <TextField name="tags" variant="outlined" label="tags" fullWidth value={postData.tags} onChange={(e)=>setPostData({...postData,tags:e.target.value})}/>
                 <div className={classes.fileInput}>
                     {/* <FileBase type="file" multiple={false} onDone={(base64)=>setPostData({...postData,selectedFile:base64})}/> */}
-                    <input id="file" type="file" multiple={false} onChange={(e)=>{uploadImage(e)}}/>
+                    <input value={image} type="file" multiple={false} onChange={(e)=>{uploadImage(e)}}/>
                 </div>
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
                 <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
